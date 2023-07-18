@@ -1,6 +1,8 @@
-package com.sparta.myselectshop.naver.entity;
+package com.sparta.myselectshop.entity;
 
-import com.sparta.myselectshop.naver.dto.ProductRequestDto;
+import com.sparta.myselectshop.dto.ItemDto;
+import com.sparta.myselectshop.dto.ProductMypriceRequestDto;
+import com.sparta.myselectshop.dto.ProductRequestDto;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -37,5 +39,13 @@ public class Product {
         this.link = requestDto.getLink();
         this.lprice = requestDto.getLprice();
         this.myprice = 0;
+    }
+
+    public void update(ProductMypriceRequestDto requestDto) {
+        this.myprice = requestDto.getMyprice();
+    }
+
+    public void updateByItemDto(ItemDto itemDto) {
+        this.lprice = itemDto.getLprice();
     }
 }
